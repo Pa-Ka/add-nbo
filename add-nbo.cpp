@@ -34,8 +34,6 @@ int main(int argc, char* argv[])
 
     uint32_t a = ReadFromFile(argv[1]);
     uint32_t b = ReadFromFile(argv[2]);
-    printf("[*] Network byte-order in first file : %d\n", a);
-    printf("[*] Network byte-order in second file : %d\n", b);
-    printf("[*] Sum : %d\n", a+b);
+    printf("[*] %d(0x%x) + %d(0x%x) = %d(0x%x)\n", a, a, b, b, a+b, a+b);
     return 0;
 }
