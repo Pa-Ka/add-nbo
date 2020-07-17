@@ -3,7 +3,7 @@
 #include <stdio.h> // for printf
 #include <netinet/in.h> // for translate network byte-order
 
-int CreateNetworkByteFile(char* name, int num)
+/*int CreateNetworkByteFile(char* name, int num) // making file written by Network byte-order 
 {
     FILE* fp = fopen(name, "wb");
     uint32_t n = htonl(num);
@@ -11,7 +11,7 @@ int CreateNetworkByteFile(char* name, int num)
     fwrite(&n, sizeof(n), 1, fp);
     fclose(fp);
     return 0;
-}
+}*/
 
 uint32_t ReadFromFile(char* name)
 {
@@ -20,11 +20,6 @@ uint32_t ReadFromFile(char* name)
     if(fp == NULL) { printf("[!] %s: No such file\n"); };
     fread(&n, sizeof(uint32_t), 1, fp);
     return ntohl(n);
-}
-
-void my_ntohl(uint32_t *p)
-{
-    // translate only host-network-order on little endian
 }
 
 int main(int argc, char* argv[])
