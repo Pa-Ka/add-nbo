@@ -17,8 +17,8 @@ uint32_t ReadFromFile(char* name)
 {
     uint32_t n = 0;
     FILE* fp = fopen(name, "rb");
-    if(fp == NULL) { printf("[!] %s: No such file\n"); };
-    fread(&n, sizeof(uint32_t), 1, fp);
+    if(fp == NULL) { printf("[!] %s: No such file\n"); exit(-1); };
+    fread(&n, 1, sizeof(uint32_t), fp);
     return ntohl(n);
 }
 
